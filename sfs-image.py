@@ -23,7 +23,7 @@ p = np.empty_like(W)
 p[...] = -1
 #     p[704, 1485] = 1
 # p[20, 20] = 0
-p[im < (20)] = 0
+p[im < (10)] = 0
 
 t = skfmm.travel_time(p, 1.0 / W)
 
@@ -33,7 +33,7 @@ layout = go.Layout(
     width=1800,
     height=1600,
     autosize=False,
-    title='Volcano dataset',
+    title='bas-relief dataset',
     scene=dict(
         xaxis=dict(
             gridcolor='rgb(255, 255, 255)',
