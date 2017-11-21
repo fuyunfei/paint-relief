@@ -5,7 +5,7 @@ import plotly.graph_objs as go
 import scipy.ndimage as spim
 import matplotlib.pyplot as plt 
 
-im = spim.imread('7-1.png', True)
+im = spim.imread('5.jpg', True)
 #     im = im[im.shape[0] / 2:, im.shape[1] / 2:]
 
 N = np.gradient(im)
@@ -13,6 +13,7 @@ N = np.concatenate((N[1][..., None], N[0][..., None], np.ones_like(N[0][..., Non
 N = N / np.sqrt((N ** 2).sum(2))[..., None]
 
 L = N.dot([0, 0, 1])
+#L=im/255.0;
 epsilon = 1e-3
 
 W = np.sqrt(1 / L ** 2 - 1)
